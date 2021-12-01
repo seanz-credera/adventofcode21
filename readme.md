@@ -1,1 +1,1 @@
-##### Advent of Code 2021 Solutions - Team {Bee Move Script}
+Advent of Code 2021 Solutions - Team {Bee Move Script}
