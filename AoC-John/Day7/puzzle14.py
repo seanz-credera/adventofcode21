@@ -1,4 +1,5 @@
 import math
+import numpy as np
 
 
 def triangular(num):
@@ -18,19 +19,9 @@ def main():
         file_content = [line.strip() for line in file_content]
         nums = file_content[0].split(",")
         nums = [int(num) for num in nums]
-        min_val = nums[0]
-        max_val = nums[0]
-        min_fuel = math.inf
-        for num in nums:
-            if num > max_val:
-                max_val = num
-            if num < min_val:
-                min_val = num
-        for i in range(min_val, max_val + 1):
-            fuel_cons = get_fuel_consumption(i, nums)
-            if fuel_cons < min_fuel:
-                min_fuel = fuel_cons
-        print(f"Min fuel consumption: {min_fuel}")
+        print(
+            f"Min fuel consumption: {int(get_fuel_consumption(math.floor(np.mean(nums)), nums))}"
+        )
 
 
 if __name__ == "__main__":
