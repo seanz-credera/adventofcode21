@@ -11,7 +11,7 @@ def main():
         for num in nums:
             num_fish[num] += 1
         print(num_fish)
-        num_days = 80
+        num_days = 256
         for i in range(num_days):
             old_num_fish = copy.deepcopy(num_fish)
             num_fish[0] = old_num_fish[1]
