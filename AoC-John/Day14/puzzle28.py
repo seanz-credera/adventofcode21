@@ -1,7 +1,7 @@
 from collections import Counter, defaultdict
 from typing import List
 
-
+# Get pair counts from initial template
 def get_pair_counts(template: str) -> defaultdict:
     counts = defaultdict(int)
     for i in range(len(template) - 1):
@@ -10,6 +10,7 @@ def get_pair_counts(template: str) -> defaultdict:
     return counts
 
 
+# From pair_counts, get the individual element counts
 def get_element_counts(pair_counts: defaultdict) -> defaultdict:
     element_counts = defaultdict(int)
     for pair, count in pair_counts.items():
@@ -18,6 +19,7 @@ def get_element_counts(pair_counts: defaultdict) -> defaultdict:
     return element_counts
 
 
+# Write input rules to dict of pair:inserted char
 def process_rules_list(rules_list: List[str]) -> dict:
     rules = dict()
     for rule in rules_list:
@@ -27,8 +29,7 @@ def process_rules_list(rules_list: List[str]) -> dict:
     return rules
 
 
-# Return the element at index with the correct element inserted after it according to rule
-# Each elt is a "first" elt in a pair, just focus on those
+# Update pair counts based on which char rules say to insert
 def update_pair_counts(pair_counts: defaultdict, rules: dict) -> defaultdict:
     new_counts = defaultdict(int)
     for pair, count in pair_counts.items():
