@@ -19,7 +19,7 @@ def insert_element(rules, template, index):
     return template[index]
 
 
-NUM_STEPS = 40
+NUM_STEPS = 10
 
 debug_filename = "AoC-John/Day14/day14.txt"
 filename = "day14.txt"
@@ -42,9 +42,9 @@ with open(filename) as file:
     elements = list(template)
     count = Counter(elements)
     ordered_count = count.most_common()
-    max = ordered_count[0]
-    min = ordered_count[-1]
+    max_elt = ordered_count[0]
+    min_elt = ordered_count[-1]
 
-    print(f"Most common element, count: {max[0]}, {max[1]}")
-    print(f"Least common element, count: {min[0]}, {min[1]}")
-    print(f"Final answer: {max[1] - min[1]}")
+    print(f"Most common element, count: {max_elt[0]}, {max_elt[1]}")
+    print(f"Least common element, count: {min_elt[0]}, {min_elt[1]}")
+    print(f"Final answer: {max_elt[1] - min_elt[1]}")
